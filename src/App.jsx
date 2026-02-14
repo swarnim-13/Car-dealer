@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import "./App.css"
 
-import Navbar from './components/navbar'
+import Navbar from './components/Navbar'
 import About from './pages/About'
 import Car from './pages/Car'
 import Addcar from './pages/Addcar'
