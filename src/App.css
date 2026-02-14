@@ -197,22 +197,161 @@ html[data-theme="light"] .secondary-btn {
 
 /* ================= RESPONSIVE ================= */
 
-@media (max-width: 768px) {
+/* ================= GLOBAL MOBILE RESPONSIVE FIX ================= */
 
-  .page-content {
-    margin-top: 70px;
+@media (max-width: 1024px) {
+
+  .nav-container {
+    padding: 15px 30px;
   }
 
+  .featured-section,
+  .why-section,
+  .process-section,
+  .stats-section,
+  .gallery-section,
+  .testimonial-section,
+  .owner-section,
+  .about-page,
+  .contact-page,
+  .car-page {
+    padding: 80px 30px;
+  }
+}
+
+
+/* ================= TABLET & MOBILE ================= */
+
+@media (max-width: 768px) {
+
+  /* NAVBAR */
+  .nav-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  /* HERO */
+  .hero {
+    height: auto;
+    padding: 120px 20px;
+    text-align: center;
+  }
+
+  .hero-content {
+    padding: 0;
+    max-width: 100%;
+  }
+
+  .hero-content h1 {
+    font-size: 36px;
+  }
+
+  .hero-content p {
+    font-size: 14px;
+  }
+
+  .hero-content button {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  /* GRID FIX */
   .why-grid,
   .process-grid,
   .owner-container,
   .stats-section {
-    flex-direction: column;
+    flex-direction: column !important;
     gap: 30px;
+    align-items: center;
   }
 
   .gallery-grid,
-  .testimonial-grid {
-    grid-template-columns: 1fr;
+  .testimonial-grid,
+  .car-grid {
+    grid-template-columns: 1fr !important;
   }
+
+  /* CARD WIDTH FIX */
+  .owner-card,
+  .testimonial-card,
+  .sell-card,
+  .contact-box {
+    width: 100%;
+  }
+
+  /* DETAILS PAGE */
+  .details-container {
+    padding: 60px 20px;
+  }
+
+  .details-header {
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+  .details-header h1 {
+    font-size: 30px;
+  }
+
+  .details-price {
+    font-size: 26px;
+  }
+
+  /* FILTER BAR */
+  .filter-bar {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .filter-bar select {
+    width: 100%;
+  }
+
+  /* EMI MODAL */
+  .emi-box {
+    width: 90%;
+    padding: 25px;
+  }
+
+  /* FOOTER */
+  .footer-container {
+    padding: 0 20px 50px 20px;
+    gap: 30px;
+  }
+}
+
+
+/* ================= SMALL MOBILE ================= */
+
+@media (max-width: 480px) {
+
+  .hero-content h1 {
+    font-size: 28px;
+  }
+
+  .about-left h1 {
+    font-size: 32px;
+  }
+
+  .car-title {
+    font-size: 26px;
+  }
+
+  .nav-links a {
+    font-size: 13px;
+  }
+
+  .sell-btn,
+  .emi-btn,
+  .theme-switch {
+    width: 100%;
+    text-align: center;
+  }
+
 }
