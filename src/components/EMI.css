@@ -1,61 +1,149 @@
+/* ================= EMI OVERLAY ================= */
+
 .emi-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.8);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 2000;
+  transition: 0.4s ease;
 }
 
+/* DARK MODE OVERLAY */
+html[data-theme="dark"] .emi-overlay {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/* LIGHT MODE OVERLAY */
+html[data-theme="light"] .emi-overlay {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+
+
+/* ================= EMI BOX ================= */
+
 .emi-box {
-  background: #16161f;
   padding: 40px;
   border-radius: 25px;
   width: 400px;
-  color: white;
   position: relative;
+  transition: 0.4s ease;
+}
+
+/* DARK MODE BOX */
+html[data-theme="dark"] .emi-box {
+  background: #16161f;
+  color: white;
   box-shadow: 0 25px 60px rgba(0,0,0,0.6);
 }
+
+/* LIGHT MODE BOX */
+html[data-theme="light"] .emi-box {
+  background: #ffffff;
+  color: #111;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+
+
+/* ================= HEADINGS ================= */
 
 .emi-box h2 {
   margin-bottom: 25px;
   text-align: center;
 }
 
+
+
+/* ================= INPUTS ================= */
+
 .emi-box input {
   width: 100%;
   padding: 12px;
   margin-bottom: 15px;
   border-radius: 10px;
+  transition: 0.3s ease;
+}
+
+/* DARK MODE INPUT */
+html[data-theme="dark"] .emi-box input {
   border: none;
   background: #2a2a2a;
   color: white;
 }
 
-.emi-box input:focus {
+html[data-theme="dark"] .emi-box input:focus {
   border: 1px solid #ff3c00;
   outline: none;
 }
+
+/* LIGHT MODE INPUT */
+html[data-theme="light"] .emi-box input {
+  border: 1px solid #ddd;
+  background: #f9f9f9;
+  color: #111;
+}
+
+html[data-theme="light"] .emi-box input:focus {
+  border: 1px solid #ff6f91;
+  outline: none;
+}
+
+
+
+/* ================= BUTTON ================= */
 
 .emi-box button {
   width: 100%;
   padding: 12px;
   border-radius: 40px;
   border: none;
-  background: linear-gradient(135deg, #ff3c00, #ff8800);
-  color: white;
   font-weight: 600;
   cursor: pointer;
+  transition: 0.3s ease;
 }
+
+/* DARK MODE BUTTON */
+html[data-theme="dark"] .emi-box button {
+  background: linear-gradient(135deg, #ff3c00, #ff8800);
+  color: white;
+}
+
+/* LIGHT MODE BUTTON */
+html[data-theme="light"] .emi-box button {
+  background: linear-gradient(135deg, #a9ff68, #ff8989);
+  color: #111;
+}
+
+
+
+/* ================= RESULT ================= */
 
 .emi-result {
   margin-top: 20px;
-  background: rgba(255,60,0,0.1);
   padding: 15px;
   border-radius: 10px;
   text-align: center;
 }
+
+/* DARK MODE RESULT */
+html[data-theme="dark"] .emi-result {
+  background: rgba(255,60,0,0.1);
+  color: white;
+}
+
+/* LIGHT MODE RESULT */
+html[data-theme="light"] .emi-result {
+  background: rgba(169,255,104,0.2);
+  color: #111;
+}
+
+
+
+/* ================= CLOSE BUTTON ================= */
 
 .emi-close {
   position: absolute;
@@ -63,6 +151,16 @@
   right: 15px;
   background: none;
   border: none;
-  color: white;
   cursor: pointer;
+  font-size: 16px;
+}
+
+/* DARK CLOSE */
+html[data-theme="dark"] .emi-close {
+  color: white;
+}
+
+/* LIGHT CLOSE */
+html[data-theme="light"] .emi-close {
+  color: #111;
 }
