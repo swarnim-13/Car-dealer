@@ -7,6 +7,7 @@ import "./Navbar.css"
 function Navbar({ toggleTheme, theme }) {
 
   const [showEMI, setShowEMI] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false)
 
   return (
     <>
@@ -15,30 +16,34 @@ function Navbar({ toggleTheme, theme }) {
 
           <h2 className="logo">Car Dealer</h2>
 
-          <div className="nav-links">
-            <Link to="/">Home</Link>
-            <Link to="/Car">Buy Cars</Link>
-            <Link to="/About">About</Link>
-            <Link to="/Contact">Contact</Link>
+          {/* Hamburger Button */}
+          <div 
+            className="hamburger"
+            onClick={() => setMenuOpen(!menuOpen)}
+          >
+            ☰
+          </div>
 
-            {/* EMI Button */}
-            <button 
-              className="emi-btn"
-              onClick={() => setShowEMI(true)}
-            >
+          <div className={`nav-links ${menuOpen ? "active" : ""}`}>
+
+            <Link to="/" onClick={() => setMenuOpen(false)}>Home</Link>
+            <Link to="/Car" onClick={() => setMenuOpen(false)}>Buy Cars</Link>
+            <Link to="/About" onClick={() => setMenuOpen(false)}>About</Link>
+            <Link to="/Contact" onClick={() => setMenuOpen(false)}>Contact</Link>
+
+            <button className="emi-btn" onClick={() => setShowEMI(true)}>
               EMI Calculator
             </button>
 
-            {/* Theme Toggle */}
-            <button 
-              className="theme-switch" 
-              onClick={toggleTheme}
-            >
+            <button className="theme-switch" onClick={toggleTheme}>
               {theme === "dark" ? "☀ Light" : "🌙 Dark"}
             </button>
 
-            {/* Sell Car */}
-            <Link to="/add-car" className="sell-btn">
+            <Link 
+              to="/add-car" 
+              className="sell-btn"
+              onClick={() => setMenuOpen(false)}
+            >
               Sell Car
             </Link>
 
@@ -47,7 +52,6 @@ function Navbar({ toggleTheme, theme }) {
         </div>
       </nav>
 
-      {/* EMI Popup */}
       {showEMI && (
         <EMICalculator onClose={() => setShowEMI(false)} />
       )}
@@ -56,7 +60,6 @@ function Navbar({ toggleTheme, theme }) {
 }
 
 export default Navbar
-
 
 // yha mene jo navbar banaya h usse app.jsx jo meri main file h vha import kr lunga
 

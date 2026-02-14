@@ -173,6 +173,41 @@ html[data-theme="light"] .theme-switch:hover {
   background: #f4f6f9;
 }
 
+/* HAMBURGER DEFAULT HIDDEN */
+.hamburger {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: white;
+}
+
+/* MOBILE NAV */
+@media (max-width: 768px) {
+
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    background: inherit;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 30px 0;
+    transform: translateY(-200%);
+    transition: 0.4s ease;
+  }
+
+  .nav-links.active {
+    transform: translateY(0);
+  }
+
+}
+
 /* ================= RESPONSIVE ================= */
 
 @media (max-width: 768px) {
