@@ -1,0 +1,178 @@
+.contact-wrapper {
+  position: relative;
+  min-height: 100vh;
+  padding: 120px 60px;
+  display: flex;
+  align-items: center;
+
+  background-image: url("https://images.unsplash.com/photo-1493238792000-8113da705763?auto=format&fit=crop&w=1920&q=80");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Dark overlay */
+.contact-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 15, 20, 0.75);
+}
+
+.contact-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  gap: 80px;
+  flex-wrap: wrap;
+  color: white;
+  align-items: center;
+}
+
+.contact-info {
+  flex: 1;
+  min-width: 300px;
+}
+
+.contact-info h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.contact-info p {
+  opacity: 0.8;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.info-item {
+  margin-bottom: 15px;
+  font-size: 15px;
+  opacity: 0.85;
+}
+
+.contact-box {
+  flex: 1;
+  min-width: 350px;
+  background: rgba(20, 20, 20, 0.95);
+  padding: 50px;
+  border-radius: 25px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+}
+
+.contact-box h1 {
+  margin-bottom: 30px;
+  font-size: 30px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 14px 18px;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  background: #2a2a2a;
+  color: white;
+  transition: 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border: 1px solid #ff3c00;
+}
+
+.contact-form textarea {
+  resize: none;
+  height: 120px;
+}
+
+.contact-form button {
+  padding: 14px;
+  border-radius: 40px;
+  border: none;
+  background: linear-gradient(135deg, #ff3c00, #ff8800);
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.contact-form button:hover {
+  box-shadow: 0 20px 40px rgba(255, 60, 0, 0.5);
+  transform: translateY(-3px);
+}
+
+.success-msg {
+  background: rgba(0, 200, 0, 0.2);
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+/* ================= CONTACT PAGE LIGHT MODE ================= */
+
+html[data-theme="light"] .contact-wrapper {
+  background-image: url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1920&q=80");
+}
+
+html[data-theme="light"] .contact-overlay {
+  background: rgba(255, 255, 255, 0.75);
+}
+
+html[data-theme="light"] .contact-container {
+  color: #111;
+}
+
+html[data-theme="light"] .contact-info h2 {
+  color: #111;
+}
+
+html[data-theme="light"] .contact-info p,
+html[data-theme="light"] .info-item {
+  color: #444;
+}
+
+html[data-theme="light"] .contact-box {
+  background: #ffffff !important;
+  color: #111 !important;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+html[data-theme="light"] .contact-form input,
+html[data-theme="light"] .contact-form textarea {
+  background: #f5f6f9 !important;
+  color: #111 !important;
+  border: 1px solid #ddd;
+}
+
+html[data-theme="light"] .contact-form input:focus,
+html[data-theme="light"] .contact-form textarea:focus {
+  border: 1px solid #ff3c00;
+  background: #ffffff !important;
+}
+
+html[data-theme="light"] .success-msg {
+  background: rgba(0, 200, 0, 0.1);
+  color: #0a7a2f;
+}
+
+
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .contact-box {
+    width: 100%;
+  }
+}

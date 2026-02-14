@@ -1,0 +1,218 @@
+/* ================= GLOBAL RESET ================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+  
+  
+  transition: all 0.4s ease;
+}
+
+.app-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.page-content {
+  flex: 1;
+  margin-top: 80px;
+}
+
+
+/* ================= DARK THEME (DEFAULT) ================= */
+
+html[data-theme="dark"] {
+  background: #0f0f14;
+  color: white;
+}
+
+html[data-theme="dark"] .navbar {
+  background: #0f0f14;
+}
+
+html[data-theme="dark"] .home,
+html[data-theme="dark"] .about-page,
+html[data-theme="dark"] .contact-page,
+html[data-theme="dark"] .car-page,
+html[data-theme="dark"] .featured-section,
+html[data-theme="dark"] .why-section,
+html[data-theme="dark"] .process-section,
+html[data-theme="dark"] .stats-section,
+html[data-theme="dark"] .gallery-section,
+html[data-theme="dark"] .testimonial-section,
+html[data-theme="dark"] .owner-section {
+  background: #16161f;
+}
+
+html[data-theme="dark"] .card-ui,
+html[data-theme="dark"] .owner-card,
+html[data-theme="dark"] .testimonial-card,
+html[data-theme="dark"] .why-grid div,
+html[data-theme="dark"] .sell-card,
+html[data-theme="dark"] .contact-box {
+  background: #1c1c26;
+  color: white;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+}
+
+
+
+/* ================= LIGHT THEME ================= */
+
+html[data-theme="light"] {
+  background: #f6f8fb;
+  color: #111;
+}
+
+/* Sections */
+html[data-theme="light"] .home,
+html[data-theme="light"] .about-page,
+html[data-theme="light"] .contact-page,
+html[data-theme="light"] .car-page,
+html[data-theme="light"] .featured-section,
+html[data-theme="light"] .why-section,
+html[data-theme="light"] .process-section,
+html[data-theme="light"] .stats-section,
+html[data-theme="light"] .gallery-section,
+html[data-theme="light"] .testimonial-section,
+html[data-theme="light"] .owner-section {
+  background: linear-gradient(180deg, #eaffd6, #ffdede);
+  color: #111;
+}
+
+/* Cards */
+html[data-theme="light"] .card-ui,
+html[data-theme="light"] .owner-card,
+html[data-theme="light"] .testimonial-card,
+html[data-theme="light"] .why-grid div,
+html[data-theme="light"] .sell-card,
+html[data-theme="light"] .contact-box {
+  background: #ffffff !important;
+  color: #111 !important;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+/* Headings */
+html[data-theme="light"] h1,
+html[data-theme="light"] h2,
+html[data-theme="light"] h3,
+html[data-theme="light"] h4 {
+  color: #111 !important;
+}
+
+/* Paragraph */
+html[data-theme="light"] p {
+  color: #444 !important;
+}
+
+/* Navbar */
+html[data-theme="light"] .navbar {
+  background: #ffffff;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+}
+
+html[data-theme="light"] .nav-links a {
+  color: #111 !important;
+}
+
+/* Footer */
+html[data-theme="light"] .footer {
+  background: #ffffff;
+  color: #111;
+}
+
+html[data-theme="light"] .footer-bottom {
+  background: #f1f3f7;
+  color: #555;
+}
+
+/* Forms */
+html[data-theme="light"] input,
+html[data-theme="light"] textarea,
+html[data-theme="light"] select {
+  background: #f9f9f9 !important;
+  color: #111 !important;
+  border: 1px solid #ddd;
+}
+
+/* ================= CAR DETAILS LIGHT MODE ================= */
+
+html[data-theme="light"] .details-wrapper {
+  background: linear-gradient(180deg, #eaffd6, #ffdede);
+  color: #111;
+}
+
+/* Hero overlay light */
+html[data-theme="light"] .details-overlay {
+  background: linear-gradient(to bottom, rgba(255,255,255,0.2), rgba(255,255,255,0.95));
+}
+
+/* Header text */
+html[data-theme="light"] .details-header h1 {
+  color: #111;
+}
+
+html[data-theme="light"] .details-price {
+  color: #ff3c00;
+}
+
+/* Spec Cards */
+html[data-theme="light"] .spec-grid div {
+  background: #ffffff !important;
+  color: #111 !important;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+html[data-theme="light"] .spec-grid h4 {
+  color: #ff3c00;
+}
+
+/* Description */
+html[data-theme="light"] .details-description p {
+  color: #444 !important;
+}
+
+/* CTA Buttons */
+html[data-theme="light"] .details-cta button {
+  background: linear-gradient(135deg, #a9ff68, #ff8989);
+  color: #111;
+}
+
+html[data-theme="light"] .secondary-btn {
+  background: transparent;
+  border: 1px solid #ff6f91;
+  color: #111;
+}
+
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+
+  .page-content {
+    margin-top: 70px;
+  }
+
+  .why-grid,
+  .process-grid,
+  .owner-container,
+  .stats-section {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .gallery-grid,
+  .testimonial-grid {
+    grid-template-columns: 1fr;
+  }
+}

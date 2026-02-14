@@ -1,0 +1,37 @@
+.car-card {
+  background: #16161f;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: 0.4s ease;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.car-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.6);
+}
+
+.car-image img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.car-info {
+  padding: 20px;
+}
+
+.car-info h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.car-price {
+  color: #ff3c00;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.car-fuel {
+  color: #bdbdbd;
+}

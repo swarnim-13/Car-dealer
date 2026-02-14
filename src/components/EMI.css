@@ -1,0 +1,68 @@
+.emi-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.emi-box {
+  background: #16161f;
+  padding: 40px;
+  border-radius: 25px;
+  width: 400px;
+  color: white;
+  position: relative;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.6);
+}
+
+.emi-box h2 {
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.emi-box input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  border: none;
+  background: #2a2a2a;
+  color: white;
+}
+
+.emi-box input:focus {
+  border: 1px solid #ff3c00;
+  outline: none;
+}
+
+.emi-box button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 40px;
+  border: none;
+  background: linear-gradient(135deg, #ff3c00, #ff8800);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.emi-result {
+  margin-top: 20px;
+  background: rgba(255,60,0,0.1);
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.emi-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}

@@ -1,0 +1,124 @@
+.sell-wrapper {
+  min-height: 100vh;
+  background-image: url("https://images.unsplash.com/photo-1493238792000-8113da705763");
+background-size: cover; background-position: center; display: flex; align-items: center;
+
+  padding: 140px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* STEP INDICATOR */
+.step-indicator {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 40px;
+  font-weight: 600;
+  color: #777;
+}
+
+.step-indicator div.active {
+  color: #ff3c00;
+}
+
+/* CARD */
+.sell-card {
+  background: #959fa6;
+  padding: 50px;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+.sell-card h2 {
+  margin-bottom: 30px;
+}
+
+/* FORM GRID */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.sell-card input,
+.sell-card select,
+.sell-card textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background: #fbfbff;
+  color: rgb(0, 0, 0);
+  margin-bottom: 20px;
+}
+
+.sell-card textarea {
+  resize: none;
+  height: 100px;
+}
+
+/* BUTTONS */
+.btn-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.sell-card button {
+  padding: 12px 25px;
+  border-radius: 30px;
+  border: none;
+  background: linear-gradient(135deg, #ff3c00, #ff8800);
+  color: white;
+  cursor: pointer;
+}
+
+.sell-card button.back {
+  background: #333;
+}
+
+.image-upload {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.image-upload label {
+  font-size: 14px;
+  color: #bdbdbd;
+}
+
+.image-upload input {
+  padding: 10px;
+  background: #1e1e2a;
+  border-radius: 8px;
+  color: white;
+  border: none;
+}
+
+.image-preview {
+  width: 120px;
+  margin-top: 10px;
+  border-radius: 10px;
+  border: 2px solid #ff3c00;
+}
+
+@media (max-width: 768px) {
+  .sell-card {
+    width: 100%;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .step-indicator {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
