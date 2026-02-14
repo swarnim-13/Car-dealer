@@ -156,12 +156,4 @@ html[data-theme="dark"] .filter-bar select {
 
 /* ================= RESPONSIVE ================= */
 
-@media (max-width: 768px) {
-  .car-page {
-    padding: 100px 20px;
-  }
 
-  .car-title {
-    text-align: center;
-  }
-}

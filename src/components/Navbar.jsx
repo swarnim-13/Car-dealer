@@ -16,22 +16,27 @@ function Navbar({ toggleTheme, theme }) {
 
           <h2 className="logo">Car Dealer</h2>
 
-          {/* Hamburger Button */}
+          {/* HAMBURGER */}
           <div 
-            className="hamburger"
+            className={`hamburger ${menuOpen ? "active" : ""}`}
             onClick={() => setMenuOpen(!menuOpen)}
           >
             ☰
           </div>
 
-          <div className={`nav-links ${menuOpen ? "active" : ""}`}>
-
+          <div className={`nav-links ${menuOpen ? "show" : ""}`}>
             <Link to="/" onClick={() => setMenuOpen(false)}>Home</Link>
             <Link to="/Car" onClick={() => setMenuOpen(false)}>Buy Cars</Link>
             <Link to="/About" onClick={() => setMenuOpen(false)}>About</Link>
             <Link to="/Contact" onClick={() => setMenuOpen(false)}>Contact</Link>
 
-            <button className="emi-btn" onClick={() => setShowEMI(true)}>
+            <button 
+              className="emi-btn"
+              onClick={() => {
+                setShowEMI(true)
+                setMenuOpen(false)
+              }}
+            >
               EMI Calculator
             </button>
 
@@ -46,7 +51,6 @@ function Navbar({ toggleTheme, theme }) {
             >
               Sell Car
             </Link>
-
           </div>
 
         </div>

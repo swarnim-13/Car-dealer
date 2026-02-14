@@ -5,6 +5,12 @@
   padding: 0;
   box-sizing: border-box;
 }
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
 
 html, body, #root {
   height: 100%;
@@ -195,60 +201,65 @@ html[data-theme="light"] .secondary-btn {
 
 
 
-/* ================= RESPONSIVE ================= */
+/* ===================== GLOBAL RESPONSIVE SYSTEM ===================== */
 
-/* ================= GLOBAL MOBILE RESPONSIVE FIX ================= */
-
+/* Tablet */
 @media (max-width: 1024px) {
 
   .nav-container {
     padding: 15px 30px;
   }
 
+  .home,
+  .about-page,
+  .contact-page,
+  .car-page,
+  .details-container,
   .featured-section,
   .why-section,
   .process-section,
   .stats-section,
   .gallery-section,
   .testimonial-section,
-  .owner-section,
-  .about-page,
-  .contact-page,
-  .car-page {
-    padding: 80px 30px;
+  .owner-section {
+    padding: 80px 30px !important;
   }
+
 }
 
 
-/* ================= TABLET & MOBILE ================= */
+/* ===================== MOBILE ===================== */
 
 @media (max-width: 768px) {
 
   /* NAVBAR */
   .nav-container {
     flex-direction: column;
+    align-items: center;
     gap: 15px;
   }
 
   .nav-links {
     flex-direction: column;
-    gap: 12px;
+    gap: 15px;
+    width: 100%;
+    align-items: center;
   }
 
-  /* HERO */
+  /* HERO SECTION */
   .hero {
-    height: auto;
-    padding: 120px 20px;
+    min-height: auto;
+    padding: 120px 20px !important;
     text-align: center;
   }
 
   .hero-content {
-    padding: 0;
+    padding: 0 !important;
     max-width: 100%;
   }
 
   .hero-content h1 {
-    font-size: 36px;
+    font-size: 32px !important;
   }
 
   .hero-content p {
@@ -260,35 +271,34 @@ html[data-theme="light"] .secondary-btn {
     margin-bottom: 15px;
   }
 
-  /* GRID FIX */
+  /* FLEX GRID FIX */
   .why-grid,
   .process-grid,
   .owner-container,
   .stats-section {
     flex-direction: column !important;
-    gap: 30px;
+    gap: 30px !important;
     align-items: center;
   }
 
+  /* GRID FIX */
   .gallery-grid,
   .testimonial-grid,
-  .car-grid {
+  .car-grid,
+  .spec-grid {
     grid-template-columns: 1fr !important;
   }
 
-  /* CARD WIDTH FIX */
+  /* CARD FIX */
   .owner-card,
   .testimonial-card,
   .sell-card,
-  .contact-box {
-    width: 100%;
+  .contact-box,
+  .emi-box {
+    width: 100% !important;
   }
 
   /* DETAILS PAGE */
-  .details-container {
-    padding: 60px 20px;
-  }
-
   .details-header {
     flex-direction: column;
     gap: 20px;
@@ -296,14 +306,14 @@ html[data-theme="light"] .secondary-btn {
   }
 
   .details-header h1 {
-    font-size: 30px;
+    font-size: 28px;
   }
 
   .details-price {
-    font-size: 26px;
+    font-size: 24px;
   }
 
-  /* FILTER BAR */
+  /* FILTER */
   .filter-bar {
     flex-direction: column;
     gap: 15px;
@@ -313,38 +323,29 @@ html[data-theme="light"] .secondary-btn {
     width: 100%;
   }
 
-  /* EMI MODAL */
-  .emi-box {
-    width: 90%;
-    padding: 25px;
-  }
-
   /* FOOTER */
   .footer-container {
-    padding: 0 20px 50px 20px;
+    padding: 0 20px 50px 20px !important;
     gap: 30px;
   }
+
 }
 
 
-/* ================= SMALL MOBILE ================= */
+/* ===================== SMALL MOBILE ===================== */
 
 @media (max-width: 480px) {
 
   .hero-content h1 {
-    font-size: 28px;
+    font-size: 26px !important;
   }
 
   .about-left h1 {
-    font-size: 32px;
+    font-size: 28px !important;
   }
 
   .car-title {
-    font-size: 26px;
-  }
-
-  .nav-links a {
-    font-size: 13px;
+    font-size: 24px;
   }
 
   .sell-btn,

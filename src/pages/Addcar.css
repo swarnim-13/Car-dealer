@@ -107,18 +107,3 @@ background-size: cover; background-position: center; display: flex; align-items:
   border-radius: 10px;
   border: 2px solid #ff3c00;
 }
-
-@media (max-width: 768px) {
-  .sell-card {
-    width: 100%;
-  }
-
-  .form-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .step-indicator {
-    flex-direction: column;
-    gap: 10px;
-  }
-}

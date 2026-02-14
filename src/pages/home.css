@@ -4,15 +4,23 @@
 }
 
 /* HERO */
+
+
 .hero {
-  position: relative;
-  height: 100vh;
+  width: 100%;
+  min-height: 100vh;
   background-image: url("https://png.pngtree.com/thumb_back/fh260/background/20241217/pngtree-super-luxury-car-rent-sale-background-image_16800196.jpg");
   background-size: cover;
-  background-position: center;
+  background-position: center right;
+  background-repeat: no-repeat;
   display: flex;
   align-items: center;
+  position: relative;
+  padding: 0 60px;
 }
+
+
+
 
 /* .hero-overlay {
   position: absolute;
@@ -25,7 +33,7 @@ html[data-theme="dark"] .hero-overlay {
 }
 
 html[data-theme="light"] .hero-overlay {
-  background: rgba(255,255,255,0.6);
+  background: rgba(0, 0, 0, 0.6);
 }
 
 
@@ -284,3 +292,30 @@ html[data-theme="light"] .hero-overlay {
 }
 
 
+@media (max-width: 768px) {
+
+  .hero {
+    min-height: 85vh;
+    padding: 120px 20px 80px 20px;
+    background-position: 70% center; /* right side zyada visible */
+  }
+
+  .hero-content {
+    text-align: center;
+    padding: 0;
+  }
+
+  .hero-content h1 {
+    font-size: 34px;
+    line-height: 1.2;
+  }
+
+  .hero-content p {
+    font-size: 14px;
+  }
+
+  .hero-content button {
+    width: 100%;
+    border-radius: 30px;
+  }
+}
