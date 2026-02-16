@@ -40,9 +40,9 @@ function Navbar({ toggleTheme, theme }) {
               EMI Calculator
             </button>
 
-            <button className="theme-switch" onClick={toggleTheme}>
+            {/* <button className="theme-switch" onClick={toggleTheme}>
               {theme === "dark" ? "☀ Light" : "🌙 Dark"}
-            </button>
+            </button> */}
 
             <Link 
               to="/add-car" 

@@ -66,7 +66,7 @@ function Cardetails() {
             Book Test Drive
           </button>
 
-          <button className="secondary-btn">
+          <button onClick={() => navigate("/Contact")} className="secondary-btn">
             Enquire Now
           </button>
         </div>

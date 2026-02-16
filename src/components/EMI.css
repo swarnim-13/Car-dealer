@@ -1,166 +1,122 @@
-/* ================= EMI OVERLAY ================= */
-
+/* OVERLAY */
 .emi-overlay {
   position: fixed;
   inset: 0;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(6px);
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 2000;
-  transition: 0.4s ease;
+  z-index: 5000;
 }
 
-/* DARK MODE OVERLAY */
-html[data-theme="dark"] .emi-overlay {
-  background: rgba(0, 0, 0, 0.8);
+/* MAIN CONTAINER */
+.emi-container {
+  width: 1000px;
+  max-width: 95%;
+  background: #111827;
+  border-radius: 30px;
+  padding: 50px;
+  display: flex;
+  gap: 50px;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+  animation: fadeUp 0.3s ease;
 }
 
-/* LIGHT MODE OVERLAY */
-html[data-theme="light"] .emi-overlay {
-  background: rgba(0, 0, 0, 0.4);
+/* LEFT SIDE */
+.emi-left {
+  flex: 1;
 }
 
+.emi-field {
+  margin-bottom: 40px;
+}
 
+.emi-field label {
+  font-size: 14px;
+  opacity: 0.8;
+}
 
-/* ================= EMI BOX ================= */
+.emi-field h3 {
+  margin: 10px 0 15px;
+  font-size: 22px;
+}
 
-.emi-box {
+.emi-field input[type="range"] {
+  width: 100%;
+  accent-color: #a9ff68;
+}
+
+/* RIGHT SIDE */
+.emi-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* MAIN EMI CARD */
+.emi-main-card {
+  background: linear-gradient(135deg, #1e3a8a, #111827);
   padding: 40px;
   border-radius: 25px;
-  width: 400px;
-  position: relative;
-  transition: 0.4s ease;
-}
-
-/* DARK MODE BOX */
-html[data-theme="dark"] .emi-box {
-  background: #16161f;
-  color: white;
-  box-shadow: 0 25px 60px rgba(0,0,0,0.6);
-}
-
-/* LIGHT MODE BOX */
-html[data-theme="light"] .emi-box {
-  background: #ffffff;
-  color: #111;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
-  border: 1px solid rgba(0,0,0,0.05);
-}
-
-
-
-/* ================= HEADINGS ================= */
-
-.emi-box h2 {
-  margin-bottom: 25px;
-  text-align: center;
-}
-
-
-
-/* ================= INPUTS ================= */
-
-.emi-box input {
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 15px;
-  border-radius: 10px;
-  transition: 0.3s ease;
-}
-
-/* DARK MODE INPUT */
-html[data-theme="dark"] .emi-box input {
-  border: none;
-  background: #2a2a2a;
   color: white;
 }
 
-html[data-theme="dark"] .emi-box input:focus {
-  border: 1px solid #ff3c00;
-  outline: none;
+.emi-main-card p {
+  opacity: 0.7;
+  letter-spacing: 2px;
 }
 
-/* LIGHT MODE INPUT */
-html[data-theme="light"] .emi-box input {
-  border: 1px solid #ddd;
-  background: #f9f9f9;
+.emi-main-card h1 {
+  font-size: 50px;
+  margin-top: 10px;
+}
+
+/* BREAKDOWN */
+.emi-breakdown {
+  display: flex;
+  gap: 20px;
+}
+
+.emi-breakdown div {
+  flex: 1;
+  background: #1f2937;
+  padding: 25px;
+  border-radius: 20px;
+}
+
+.emi-breakdown p {
+  opacity: 0.7;
+}
+
+.emi-breakdown h3 {
+  margin-top: 8px;
+}
+
+/* LIGHT MODE */
+html[data-theme="light"] .emi-container {
+  background: white;
   color: #111;
 }
 
-html[data-theme="light"] .emi-box input:focus {
-  border: 1px solid #ff6f91;
-  outline: none;
-}
-
-
-
-/* ================= BUTTON ================= */
-
-.emi-box button {
-  width: 100%;
-  padding: 12px;
-  border-radius: 40px;
-  border: none;
-  font-weight: 600;
-  cursor: pointer;
-  transition: 0.3s ease;
-}
-
-/* DARK MODE BUTTON */
-html[data-theme="dark"] .emi-box button {
-  background: linear-gradient(135deg, #ff3c00, #ff8800);
-  color: white;
-}
-
-/* LIGHT MODE BUTTON */
-html[data-theme="light"] .emi-box button {
+html[data-theme="light"] .emi-main-card {
   background: linear-gradient(135deg, #a9ff68, #ff8989);
   color: #111;
 }
 
-
-
-/* ================= RESULT ================= */
-
-.emi-result {
-  margin-top: 20px;
-  padding: 15px;
-  border-radius: 10px;
-  text-align: center;
+html[data-theme="light"] .emi-breakdown div {
+  background: #f3f4f6;
 }
 
-/* DARK MODE RESULT */
-html[data-theme="dark"] .emi-result {
-  background: rgba(255,60,0,0.1);
-  color: white;
-}
-
-/* LIGHT MODE RESULT */
-html[data-theme="light"] .emi-result {
-  background: rgba(169,255,104,0.2);
-  color: #111;
-}
-
-
-
-/* ================= CLOSE BUTTON ================= */
-
-.emi-close {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-/* DARK CLOSE */
-html[data-theme="dark"] .emi-close {
-  color: white;
-}
-
-/* LIGHT CLOSE */
-html[data-theme="light"] .emi-close {
-  color: #111;
+/* ANIMATION */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

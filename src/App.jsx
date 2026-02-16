@@ -38,7 +38,7 @@ function App() {
 
        <ScrollToTop />
 
-      <Navbar toggleTheme={toggleTheme} theme={theme} />
+      <Navbar />
 
       {/* IMPORTANT: Footer ko page-content ke bahar rakho */}
       <div className="page-content">
