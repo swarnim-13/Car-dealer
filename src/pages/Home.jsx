@@ -14,10 +14,7 @@ function Home() {
         <div className="hero-overlay"></div>
         <div className="hero-content">
           <h1>Unleash The Power</h1>
-          <p>
-            Performance Machines. Precision Engineering.
-            Experience the thrill of driving excellence.
-          </p>
+        
           <button onClick={() => navigate("/Car")}>
             Explore Cars
           </button>

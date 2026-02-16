@@ -1,29 +1,35 @@
-/* OVERLAY */
+/* ================= OVERLAY ================= */
+
 .emi-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.6);
-  backdrop-filter: blur(6px);
+  background: rgba(0,0,0,0.65);
+  backdrop-filter: blur(8px);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 5000;
+  padding: 20px;   /* important for mobile */
+  overflow-y: auto; /* allow scroll on small screens */
 }
 
-/* MAIN CONTAINER */
+/* ================= MAIN CONTAINER ================= */
+
 .emi-container {
-  width: 1000px;
-  max-width: 95%;
+  width: 1100px;
+  max-width: 100%;
   background: #111827;
   border-radius: 30px;
   padding: 50px;
   display: flex;
-  gap: 50px;
+  gap: 60px;
   box-shadow: 0 30px 80px rgba(0,0,0,0.6);
   animation: fadeUp 0.3s ease;
+  position: relative;
 }
 
-/* LEFT SIDE */
+/* ================= LEFT SIDE ================= */
+
 .emi-left {
   flex: 1;
 }
@@ -45,9 +51,11 @@
 .emi-field input[type="range"] {
   width: 100%;
   accent-color: #a9ff68;
+  cursor: pointer;
 }
 
-/* RIGHT SIDE */
+/* ================= RIGHT SIDE ================= */
+
 .emi-right {
   flex: 1;
   display: flex;
@@ -55,7 +63,8 @@
   gap: 30px;
 }
 
-/* MAIN EMI CARD */
+/* ================= MAIN EMI CARD ================= */
+
 .emi-main-card {
   background: linear-gradient(135deg, #1e3a8a, #111827);
   padding: 40px;
@@ -69,11 +78,13 @@
 }
 
 .emi-main-card h1 {
-  font-size: 50px;
+  font-size: 52px;
   margin-top: 10px;
+  word-break: break-word;
 }
 
-/* BREAKDOWN */
+/* ================= BREAKDOWN ================= */
+
 .emi-breakdown {
   display: flex;
   gap: 20px;
@@ -92,9 +103,11 @@
 
 .emi-breakdown h3 {
   margin-top: 8px;
+  word-break: break-word;
 }
 
-/* LIGHT MODE */
+/* ================= LIGHT MODE ================= */
+
 html[data-theme="light"] .emi-container {
   background: white;
   color: #111;
@@ -109,14 +122,68 @@ html[data-theme="light"] .emi-breakdown div {
   background: #f3f4f6;
 }
 
-/* ANIMATION */
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
+/* ================= RESPONSIVE ================= */
+
+/* Tablet */
+/* ================= MOBILE FIX ================= */
+
+@media (max-width: 768px) {
+
+  .emi-overlay {
+    align-items: flex-start;
+    padding-top: 40px;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+
+  .emi-container {
+    flex-direction: column;
+    padding: 25px 18px;
+    gap: 25px;
+    border-radius: 20px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
   }
+
+  /* Reduce spacing */
+  .emi-field {
+    margin-bottom: 25px;
+  }
+
+  .emi-field h3 {
+    font-size: 18px;
+  }
+
+  /* Make sliders easier to use */
+  .emi-field input[type="range"] {
+    height: 8px;
+  }
+
+  .emi-field input[type="range"]::-webkit-slider-thumb {
+    height: 22px;
+    width: 22px;
+    border-radius: 50%;
+    background: #a9ff68;
+    cursor: pointer;
+  }
+
+  /* EMI Main Card Smaller */
+  .emi-main-card {
+    padding: 22px;
+    border-radius: 18px;
+  }
+
+  .emi-main-card h1 {
+    font-size: 28px;
+  }
+
+  /* Breakdown stacked */
+  .emi-breakdown {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .emi-breakdown div {
+    padding: 18px;
+  }
+
 }
