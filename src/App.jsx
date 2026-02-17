@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import "./App.css"
 
 
-import Chatbox from './components/Chatbox'
+// import Chatbox from './components/Chatbox'
 import Navbar from './components/Navbar'
 import About from './pages/About'
 import Car from './pages/Car'
