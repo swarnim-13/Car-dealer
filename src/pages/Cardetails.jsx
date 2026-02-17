@@ -1,74 +1,97 @@
-import { useParams, useNavigate } from "react-router-dom"
+import { useParams } from "react-router-dom"
 import cardata from "../services/cardata"
 import "./Cardetails.css"
+import { useState } from "react"
 
 function Cardetails() {
 
   const { id } = useParams()
-  const navigate = useNavigate()
+  const car = cardata.find((c) => c.id === Number(id))
 
-  const car = cardata.find((item) => item.id === Number(id))
+  const [mainImage, setMainImage] = useState(car?.image)
 
   if (!car) {
-    return <h2 className="not-found">Car not found</h2>
+    return <h2 style={{ padding: "150px 60px" }}>Car Not Found</h2>
   }
 
   return (
     <div className="details-wrapper">
 
-      {/* IMAGE HERO */}
-      <div className="details-hero">
-        <img src={car.image} alt={car.name} />
-        <div className="details-overlay"></div>
-      </div>
-
-      {/* MAIN CONTENT */}
       <div className="details-container">
 
-        <div className="details-header">
+        {/* LEFT IMAGE GALLERY */}
+        <div className="details-left">
+
+          <div className="main-image">
+            <img src={mainImage} alt={car.name} />
+          </div>
+
+          <div className="thumbnail-row">
+            {[car.image, car.image1, car.image2, car.image3,].map((img, index) => (
+              <img
+                key={index}
+                src={img}
+                alt="thumb"
+                onClick={() => setMainImage(img)}
+              />
+            ))}
+          </div>
+
+        </div>
+
+        {/* RIGHT SIDE DETAILS */}
+        <div className="details-right">
+
           <h1>{car.name}</h1>
-          <h2 className="details-price">₹ {car.price}</h2>
-        </div>
-
-        {/* SPEC GRID */}
-        <div className="spec-grid">
-          <div>
-            <h4>Fuel Type</h4>
-            <p>{car.fuel}</p>
-          </div>
-          <div>
-            <h4>Transmission</h4>
-            <p>{car.transmission || "Automatic"}</p>
-          </div>
-          <div>
-            <h4>Condition</h4>
-            <p>Certified</p>
-          </div>
-          <div>
-            <h4>Warranty</h4>
-            <p>1 Year</p>
-          </div>
-        </div>
-
-        {/* DESCRIPTION */}
-        <div className="details-description">
-          <h3>Performance Overview</h3>
-          <p>
-            This vehicle delivers outstanding performance, comfort, and reliability.
-            Built for driving enthusiasts who demand precision engineering and
-            superior road presence.
+          <p className="car-sub">
+            {car.Year} • {car.KM} km • {car.fuel}
           </p>
-        </div>
 
-        {/* CTA */}
-        <div className="details-cta">
-          <button onClick={() => navigate("/Contact")}>
-            Book Test Drive
-          </button>
+          <div className="price-card">
+            <p>Price</p>
+            <h2>{car.price}</h2>
+          </div>
 
-          <button onClick={() => navigate("/Contact")} className="secondary-btn">
-            Enquire Now
-          </button>
+          <div className="spec-grid">
+
+            <div>
+              <p>Year</p>
+              <h4>{car.Year}</h4>
+            </div>
+
+            <div>
+              <p>KM Driven</p>
+              <h4>{car.KM}</h4>
+            </div>
+
+            <div>
+              <p>Fuel</p>
+              <h4>{car.fuel}</h4>
+            </div>
+
+           
+
+            <div>
+              <p>Status</p>
+              <h4>{car.status || "Available"}</h4>
+            </div>
+
+          </div>
+
+          <div className="details-buttons">
+
+          <a href="/Contact">
+            <button className="call-btn">Call</button>
+</a>
+
+            <a href="https://web.whatsapp.com/" >
+            <button  className="whatsapp-btn">WhatsApp</button>
+            </a>
+           
+            
+
+          </div>
+
         </div>
 
       </div>

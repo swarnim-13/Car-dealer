@@ -18,6 +18,10 @@ function Home() {
           <button onClick={() => navigate("/Car")}>
             Explore Cars
           </button>
+<button onClick={() => navigate("Add-car")}>
+            Sell Car
+          </button>
+          
         </div>
       </section>
 

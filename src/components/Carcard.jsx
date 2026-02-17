@@ -12,8 +12,14 @@ function Carcard({ car }) {
 
         <div className="car-content">
           <h3>{car.name}</h3>
-          <p className="car-price">₹ {car.price}</p>
-          <p className="car-fuel">{car.fuel}</p>
+          
+            <p className="car-price">₹ {car.price}
+            <p className="car-fuel">{car.fuel}
+            </p>
+          </p>
+        
+           <p className="car-price">CLICK TO KNOW</p>
+  
         </div>
 
       </div>
