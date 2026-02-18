@@ -110,14 +110,14 @@ html[data-theme="light"] .hero-overlay {
 
 /* WHY */
 .why-section {
-  padding: 120px 60px;
+  padding: 100px 80px;
   text-align: center;
 }
 
 .why-grid {
   display: flex;
   gap: 40px;
-  padding: 40px;
+  padding: 30px;
   flex-wrap: wrap;
   justify-content: center;
 }
