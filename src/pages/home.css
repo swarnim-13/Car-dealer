@@ -45,7 +45,7 @@
   font-size: 72px;
   font-weight: 900;
   line-height: 1.1;
-  margin-bottom: 25px;
+  margin-bottom: 55px;
   color: #ffffff;
   letter-spacing: 1px;
 }
@@ -124,9 +124,9 @@ html[data-theme="light"] .hero-overlay {
 
 .why-grid div {
   flex: 1;
-  min-width: 250px;
+  min-width: 230px;
   background: #16161f;
-  padding: 40px;
+  padding: 38px;
   border-radius: 20px;
   transition: 0.4s ease;
 }
@@ -340,7 +340,7 @@ html[data-theme="light"] .hero-overlay {
 
   .hero-content h1 {
     font-size: 34px;
-    line-height: 1.2;
+    line-height: 1.8;
   }
 
   .hero-content p {
