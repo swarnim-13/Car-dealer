@@ -9,6 +9,7 @@ function Cardetails() {
   const car = cardata.find((c) => c.id === Number(id))
 
   const [mainImage, setMainImage] = useState(car?.image)
+  const [isPreviewOpen, setIsPreviewOpen] = useState(false)
 
   if (!car) {
     return <h2 style={{ padding: "150px 60px" }}>Car Not Found</h2>
@@ -23,17 +24,26 @@ function Cardetails() {
         <div className="details-left">
 
           <div className="main-image">
-            <img src={mainImage} alt={car.name} />
+            <img 
+              src={mainImage} 
+              alt={car.name}
+              onClick={() => setIsPreviewOpen(true)}
+              style={{ cursor: "zoom-in" }}
+            />
           </div>
 
           <div className="thumbnail-row">
-            {[car.image, car.image1, car.image2, car.image3,].map((img, index) => (
-              <img
-                key={index}
-                src={img}
-                alt="thumb"
-                onClick={() => setMainImage(img)}
-              />
+            {[car.image, car.image1, car.image2, car.image3].map((img, index) => (
+              img && (
+                <img
+                  key={index}
+                  src={img}
+                  alt="thumb"
+                  onClick={() => setMainImage(img)}
+                  
+                />
+                
+              )
             ))}
           </div>
 
@@ -69,8 +79,6 @@ function Cardetails() {
               <h4>{car.fuel}</h4>
             </div>
 
-           
-
             <div>
               <p>Status</p>
               <h4>{car.status || "Available"}</h4>
@@ -80,21 +88,34 @@ function Cardetails() {
 
           <div className="details-buttons">
 
-          <a href="/Contact">
-            <button className="call-btn">Call</button>
-</a>
-
-            <a href="https://web.whatsapp.com/" >
-            <button  className="whatsapp-btn">WhatsApp</button>
+            <a href="/Contact">
+              <button className="call-btn">Call</button>
             </a>
-           
-            
+
+            <a href="https://web.whatsapp.com/" target="_blank" rel="noreferrer">
+              <button className="whatsapp-btn">WhatsApp</button>
+            </a>
 
           </div>
 
         </div>
 
       </div>
+
+      {/* FULLSCREEN IMAGE PREVIEW */}
+      {isPreviewOpen && (
+        <div 
+          className="image-preview-overlay"
+          onClick={() => setIsPreviewOpen(false)}
+        >
+          <img 
+            src={mainImage} 
+            alt="Full Preview"
+            className="image-preview"
+            
+          />
+        </div>
+      )}
 
     </div>
   )
